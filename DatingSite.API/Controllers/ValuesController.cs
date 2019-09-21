@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using DatingSite.API.Data;
 using DatingSite.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingSite.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
