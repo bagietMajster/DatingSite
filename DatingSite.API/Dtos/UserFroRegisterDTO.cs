@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DatingSite.API.Dtos
 {
-    public class UserFroRegisterDTO
+    public class UserForRegisterDTO
     {
         [Required(ErrorMessage = "Username is required")]
         public string Username { get; set; }
