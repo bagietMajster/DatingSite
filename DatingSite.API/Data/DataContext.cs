@@ -15,5 +15,6 @@ namespace DatingSite.API.Data
         }
 
         public DbSet<ValueModel> Values { get; set; }
+        public DbSet<UserModel> Users { get; set; }
     }
 }
