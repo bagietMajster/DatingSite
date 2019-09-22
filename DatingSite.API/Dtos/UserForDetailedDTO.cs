@@ -1,21 +1,20 @@
-﻿using System;
+﻿using DatingSite.API.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DatingSite.API.Models
+namespace DatingSite.API.Dtos
 {
-    public class UserModel
+    public class UserForDetailedDTO
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public byte[] PassowrdHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
 
         // basic user info
         public string Gender { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string ZodiacSign { get; set; }//xD
+        public int Age { get; set; }
+        public string ZodiacSign { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public string City { get; set; }
@@ -26,7 +25,7 @@ namespace DatingSite.API.Models
         public string EyeColor { get; set; }
         public string HairColor { get; set; }
         public string MartialStatus { get; set; }
-        public string Education { get; set; }
+        public string Eductaion { get; set; }
         public string Profession { get; set; }
         public string Children { get; set; }
         public string Languages { get; set; }
@@ -52,6 +51,7 @@ namespace DatingSite.API.Models
         public string FriednsWouldDescribeMe { get; set; }
 
         // photos
-        public ICollection<PhotoModel> Photos { get; set; }
+        public ICollection<PhotosForDetailedDTO> Photos { get; set; }
+        public string PhotoUrl { get; set; }
     }
 }
