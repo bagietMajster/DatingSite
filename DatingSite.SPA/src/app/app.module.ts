@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './Services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertifyService } from './Services/alertify.service';
 
 @NgModule({
    declarations: [
@@ -22,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
       FormsModule
    ],
    providers: [
-      AuthService
+      AuthService,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
