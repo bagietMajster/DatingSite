@@ -14,7 +14,7 @@ export interface UserModel {
     eyeColor: string;
     hairColor: string;
     martialStatus: string;
-    eductaion?: any;
+    education: string;
     profession: string;
     children: string;
     languages: string;

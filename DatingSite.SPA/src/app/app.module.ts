@@ -17,7 +17,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './guards/auth.guard';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap/';
 import { ErrorInterceptorProvider } from './Services/error.Interceptor';
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
@@ -50,7 +50,8 @@ export function tokenGetter() {
          }
       }),
       RouterModule.forRoot(appRoutes),
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      TabsModule.forRoot()
    ],
    providers: [
       AuthService,

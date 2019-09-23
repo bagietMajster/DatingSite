@@ -25,7 +25,7 @@ namespace DatingSite.API.Dtos
         public string EyeColor { get; set; }
         public string HairColor { get; set; }
         public string MartialStatus { get; set; }
-        public string Eductaion { get; set; }
+        public string Education { get; set; }
         public string Profession { get; set; }
         public string Children { get; set; }
         public string Languages { get; set; }
