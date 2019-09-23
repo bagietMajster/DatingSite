@@ -38,7 +38,7 @@ namespace DatingSite.API.Models
         public string LookingFor { get; set; }
 
         // Passions etc
-        public string Intrests { get; set; }
+        public string Interests { get; set; }
         public string FreeTime { get; set; }
         public string Sport { get; set; }
         public string Movies { get; set; }
@@ -49,7 +49,7 @@ namespace DatingSite.API.Models
         public string IdoNotLike { get; set; }
         public string MakesMeLaugh { get; set; }
         public string ItFeelsBestIn { get; set; }
-        public string FriednsWouldDescribeMe { get; set; }
+        public string FriendeWouldDescribeMe { get; set; }
 
         // photos
         public ICollection<PhotoModel> Photos { get; set; }

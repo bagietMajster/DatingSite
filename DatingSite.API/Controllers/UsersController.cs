@@ -29,7 +29,7 @@ namespace DatingSite.API.Controllers
         {
             var users = await _userRepository.GetUsers();
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDTO>>(users);
-            return Ok(users);
+            return Ok(usersToReturn);
         }
 
         [HttpGet("{id}")]
@@ -37,9 +37,9 @@ namespace DatingSite.API.Controllers
         {
             var user = await _userRepository.GetUser(id);
 
-            var usersToReturn = _mapper.Map<UserForDetailedDTO>(user);
+            var userToReturn = _mapper.Map<UserForDetailedDTO>(user);
 
-            return Ok(user);
+            return Ok(userToReturn);
         }
     }
 }

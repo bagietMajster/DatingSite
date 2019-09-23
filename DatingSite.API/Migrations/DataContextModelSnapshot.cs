@@ -61,7 +61,7 @@ namespace DatingSite.API.Migrations
 
                     b.Property<string>("FreeTime");
 
-                    b.Property<string>("FriednsWouldDescribeMe");
+                    b.Property<string>("FriendeWouldDescribeMe");
 
                     b.Property<string>("Gender");
 
@@ -73,7 +73,7 @@ namespace DatingSite.API.Migrations
 
                     b.Property<string>("IdoNotLike");
 
-                    b.Property<string>("Intrests");
+                    b.Property<string>("Interests");
 
                     b.Property<string>("ItFeelsBestIn");
 

@@ -40,7 +40,7 @@ namespace DatingSite.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Eductaion",
+                name: "Education",
                 table: "Users",
                 nullable: true);
 
@@ -55,7 +55,7 @@ namespace DatingSite.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "FriednsWouldDescribeMe",
+                name: "FriendeWouldDescribeMe",
                 table: "Users",
                 nullable: true);
 
@@ -85,7 +85,7 @@ namespace DatingSite.API.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
-                name: "Intrests",
+                name: "Interests",
                 table: "Users",
                 nullable: true);
 
@@ -214,7 +214,7 @@ namespace DatingSite.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Eductaion",
+                name: "Education",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -226,7 +226,7 @@ namespace DatingSite.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "FriednsWouldDescribeMe",
+                name: "FriendeWouldDescribeMe",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -250,7 +250,7 @@ namespace DatingSite.API.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "Intrests",
+                name: "Interests",
                 table: "Users");
 
             migrationBuilder.DropColumn(

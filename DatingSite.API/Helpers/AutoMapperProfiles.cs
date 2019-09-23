@@ -12,15 +12,15 @@ namespace DatingSite.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<UserModel, UserForListDTO>();
-            //    .ForMember(dest => dest.PhotoUrl, opt =>
-            //    {
-            //        opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
-            //    })
-            //    .ForMember(dest => dest.Age, opt =>
-            //    {
-            //        opt.ResolveUsing(src => src.DateOfBirth.CalculateAge());
-            //    });
+            CreateMap<UserModel, UserForListDTO>()
+                .ForMember(dest => dest.PhotoUrl, opt =>
+                {
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url);
+                })
+                .ForMember(dest => dest.Age, opt =>
+                {
+                    opt.ResolveUsing(src => src.DateOfBirth.CalculateAge());
+                });
             CreateMap<UserModel, UserForDetailedDTO>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
                 {

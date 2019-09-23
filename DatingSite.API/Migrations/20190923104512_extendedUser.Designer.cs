@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingSite.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190922211456_userexe3333")]
-    partial class userexe3333
+    [Migration("20190923104512_extendedUser")]
+    partial class extendedUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,7 +63,7 @@ namespace DatingSite.API.Migrations
 
                     b.Property<string>("FreeTime");
 
-                    b.Property<string>("FriednsWouldDescribeMe");
+                    b.Property<string>("FriendeWouldDescribeMe");
 
                     b.Property<string>("Gender");
 
@@ -75,7 +75,7 @@ namespace DatingSite.API.Migrations
 
                     b.Property<string>("IdoNotLike");
 
-                    b.Property<string>("Intrests");
+                    b.Property<string>("Interests");
 
                     b.Property<string>("ItFeelsBestIn");
 
@@ -100,8 +100,6 @@ namespace DatingSite.API.Migrations
                     b.Property<byte[]>("PasswordSalt");
 
                     b.Property<string>("Personality");
-
-                    b.Property<string>("PhotosURL");
 
                     b.Property<string>("Profession");
 
