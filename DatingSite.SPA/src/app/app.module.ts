@@ -20,6 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ErrorInterceptorProvider } from './Services/error.Interceptor';
 import { UserCardComponent } from './users/user-card/user-card.component';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -34,7 +35,8 @@ export function tokenGetter() {
       UserListComponent,
       LikesComponent,
       MessagesComponent,
-      UserCardComponent
+      UserCardComponent,
+      UserDetailComponent
    ],
    imports: [
       BrowserModule,

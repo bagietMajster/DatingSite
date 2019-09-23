@@ -1,0 +1,40 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user?.photoUrl}}" alt="{{user?.username">
+          <div class="card-body">
+            <div>
+              <strong>Zodiac Sign</strong>
+              <p>{{user?.zodiacSign}}</p>
+            </div>
+            <div>
+                <strong>Age</strong>
+                <p>{{user?.age}}</p>
+            </div>
+            <div>
+              <strong>Localization</strong>
+              <p>{{user?.city}}, {{user?.country}}</p>
+            </div>
+            <div>
+                <strong>Last active</strong>
+                <p>{{user?.lastActive}}</p>
+            </div>
+            <div>
+                <strong>User since</strong>
+                <p>{{user?.created}}</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group d-flex">
+                <button class="btn btn-success">Like</button>
+                <button class="btn btn-primary">Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-sm-4">
+        Other info
+      </div>
+    </div>
+  </div>
