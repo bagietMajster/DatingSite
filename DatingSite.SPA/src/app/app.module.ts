@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { NgxGalleryModule } from 'ngx-gallery';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
@@ -21,6 +21,10 @@ import { BsDropdownModule, TabsModule } from 'ngx-bootstrap/';
 import { ErrorInterceptorProvider } from './Services/error.Interceptor';
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { UserDetailResolver } from './resolvers/user-detail.resolver';
+import { UserListResolver } from './resolvers/user-listl.resolver';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { UserEditResolver } from './resolvers/user-edit.resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -36,7 +40,8 @@ export function tokenGetter() {
       LikesComponent,
       MessagesComponent,
       UserCardComponent,
-      UserDetailComponent
+      UserDetailComponent,
+      UserEditComponent
    ],
    imports: [
       BrowserModule,
@@ -51,14 +56,18 @@ export function tokenGetter() {
       }),
       RouterModule.forRoot(appRoutes),
       BsDropdownModule.forRoot(),
-      TabsModule.forRoot()
+      TabsModule.forRoot(),
+      NgxGalleryModule
    ],
    providers: [
       AuthService,
       AlertifyService,
       UserService,
       AuthGuard,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      UserDetailResolver,
+      UserListResolver,
+      UserEditResolver
    ],
    bootstrap: [
       AppComponent
