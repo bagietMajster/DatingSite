@@ -22,7 +22,7 @@ export interface UserModel {
     description: string;
     personality: string;
     lookingFor: string;
-    intrests?: any;
+    interests: string;
     freeTime: string;
     sport: string;
     movies: string;

@@ -25,6 +25,7 @@ import { UserDetailResolver } from './resolvers/user-detail.resolver';
 import { UserListResolver } from './resolvers/user-listl.resolver';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserEditResolver } from './resolvers/user-edit.resolver';
+import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -67,7 +68,8 @@ export function tokenGetter() {
       ErrorInterceptorProvider,
       UserDetailResolver,
       UserListResolver,
-      UserEditResolver
+      UserEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent

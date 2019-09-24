@@ -37,7 +37,7 @@ namespace DatingSite.API.Dtos
         public string LookingFor { get; set; }
 
         // Passions etc
-        public string Intrests { get; set; }
+        public string Interests { get; set; }
         public string FreeTime { get; set; }
         public string Sport { get; set; }
         public string Movies { get; set; }

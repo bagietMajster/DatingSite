@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DatingSite.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20190923104512_extendedUser")]
-    partial class extendedUser
+    [Migration("20190924182122_extUser")]
+    partial class extUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
