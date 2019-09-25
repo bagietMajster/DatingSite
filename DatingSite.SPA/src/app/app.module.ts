@@ -17,6 +17,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './guards/auth.guard';
+import { FileUploadModule } from 'ng2-file-upload';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap/';
 import { ErrorInterceptorProvider } from './Services/error.Interceptor';
 import { UserCardComponent } from './users/user-card/user-card.component';
@@ -26,6 +27,7 @@ import { UserListResolver } from './resolvers/user-listl.resolver';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UserEditResolver } from './resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
+import { PhotosComponent } from './photos/photos.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -42,12 +44,14 @@ export function tokenGetter() {
       MessagesComponent,
       UserCardComponent,
       UserDetailComponent,
-      UserEditComponent
+      UserEditComponent,
+      PhotosComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      NgxGalleryModule,
       JwtModule.forRoot({
          config: {
             tokenGetter,
@@ -58,7 +62,7 @@ export function tokenGetter() {
       RouterModule.forRoot(appRoutes),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
-      NgxGalleryModule
+      FileUploadModule
    ],
    providers: [
       AuthService,

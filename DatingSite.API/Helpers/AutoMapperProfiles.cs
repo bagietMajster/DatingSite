@@ -32,6 +32,8 @@ namespace DatingSite.API.Helpers
                 }); 
             CreateMap<PhotoModel, PhotosForDetailedDTO>();
             CreateMap<UserForUpdateDTO, UserModel>();
+            CreateMap<PhotoModel, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDTO, PhotoModel>();
         }
     }
 }

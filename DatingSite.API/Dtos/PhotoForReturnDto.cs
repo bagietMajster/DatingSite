@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace DatingSite.API.Models
+namespace DatingSite.API.Dtos
 {
-    public class PhotoModel
+    public class PhotoForReturnDto
     {
         public int Id { get; set; }
         public string Url { get; set; }
@@ -10,7 +13,5 @@ namespace DatingSite.API.Models
         public DateTime DateAdded { get; set; }
         public bool IsMain { get; set; }
         public string public_id { get; set; }
-        public UserModel User { get; set; }
-        public int UserId { get; set; }
     }
 }
