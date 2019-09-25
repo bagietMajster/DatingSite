@@ -31,6 +31,7 @@ namespace DatingSite.API.Helpers
                     opt.ResolveUsing(src => src.DateOfBirth.CalculateAge());
                 }); 
             CreateMap<PhotoModel, PhotosForDetailedDTO>();
+            CreateMap<UserForUpdateDTO, UserModel>();
         }
     }
 }

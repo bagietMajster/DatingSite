@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DatingSite.API.Controllers
@@ -40,6 +41,25 @@ namespace DatingSite.API.Controllers
             var userToReturn = _mapper.Map<UserForDetailedDTO>(user);
 
             return Ok(userToReturn);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDTO userForUpdateDTO)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            {
+                return Unauthorized();
+            }
+
+            var userFromRepo = await _userRepository.GetUser(id);
+
+            _mapper.Map(userForUpdateDTO, userFromRepo);
+
+            if (await _userRepository.SaveAll())
+            {
+                return NoContent();
+            }
+            throw new Exception($"Update (id:{id}) failed. Database error!");
         }
     }
 }
