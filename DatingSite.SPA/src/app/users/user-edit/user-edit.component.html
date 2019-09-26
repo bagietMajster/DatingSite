@@ -131,7 +131,7 @@
               <textarea class="form-control" name="friednsWouldDescribeMe" rows="4" [(ngModel)]="user.friednsWouldDescribeMe"></textarea>
             </tab>
             <tab heading="Photos">
-              <app-photos [photos]="user.photos"></app-photos>
+              <app-photos [photos]="user.photos" (getUserPhotoChange)="updateMainPhoto($event)"></app-photos>
             </tab>
             <tab heading="Messages">
               <p>photos</p>
