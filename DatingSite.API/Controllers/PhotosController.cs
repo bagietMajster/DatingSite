@@ -70,7 +70,7 @@ namespace DatingSite.API.Controllers
 
             var photo = _mapper.Map<PhotoModel>(photoForCreationDTO);
 
-            if(userFromRepo.Photos.Any(p=>p.IsMain))
+            if(!userFromRepo.Photos.Any(p=>p.IsMain))
             {
                 photo.IsMain = true;
             }
@@ -93,6 +93,39 @@ namespace DatingSite.API.Controllers
             var photoForReturn = _mapper.Map<PhotoForReturnDto>(photoFromRepo);
 
             return Ok(photoForReturn);
+        }
+
+        [HttpPost("{id}/setMain")]
+        public async Task<IActionResult> SetMainPhoto(int userId,int id)
+        {
+            if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            {
+                return Unauthorized();
+            }
+
+            var user = await _repository.GetUser(userId);
+
+            if (!user.Photos.Any(p => p.Id == id))
+            {
+                return Unauthorized();
+            }
+
+            var photoFromRepo = await _repository.GetPhoto(id);
+
+            if(photoFromRepo.IsMain)
+            {
+                return BadRequest("Its alredy main photo");
+            }
+
+            var currentMainPhoto = await _repository.GetMainPhotoForUser(userId);
+            currentMainPhoto.IsMain = false;
+            photoFromRepo.IsMain = true;
+
+            if(await _repository.SaveAll())
+            {
+                return NoContent();
+            }
+            return BadRequest("Cannot save photo as main photo");
         }
     }
 }

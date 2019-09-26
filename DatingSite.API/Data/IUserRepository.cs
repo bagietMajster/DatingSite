@@ -9,5 +9,6 @@ namespace DatingSite.API.Data
         Task<IEnumerable<UserModel>> GetUsers();
         Task<UserModel> GetUser(int id);
         Task<PhotoModel> GetPhoto(int id);
+        Task<PhotoModel> GetMainPhotoForUser(int userId);
     }
 }

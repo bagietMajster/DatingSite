@@ -16,6 +16,11 @@ namespace DatingSite.API.Data
             _context = context;
         }
 
+        public async Task<PhotoModel> GetMainPhotoForUser(int userId)
+        {
+            return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+        }
+
         public async Task<PhotoModel> GetPhoto(int id)
         {
             var photo = await _context.Photos.FirstOrDefaultAsync(p => p.Id == id);

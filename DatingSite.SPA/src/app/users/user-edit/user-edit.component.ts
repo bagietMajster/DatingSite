@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 export class UserEditComponent implements OnInit {
 
   user: UserModel;
-  @ViewChild('editForm', {static: true}) editForm: NgForm;
+  @ViewChild('editForm', null) editForm: NgForm;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotfication($event: any) {
     if (this.editForm.dirty) {
