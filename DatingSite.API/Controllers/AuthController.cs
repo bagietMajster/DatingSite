@@ -1,4 +1,5 @@
-﻿using DatingSite.API.Data;
+﻿using AutoMapper;
+using DatingSite.API.Data;
 using DatingSite.API.Dtos;
 using DatingSite.API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -20,11 +21,13 @@ namespace DatingSite.API.Controllers
     {
         private readonly IAuthRepository _repository;
         private readonly IConfiguration _configuration;
+        private readonly IMapper _mapper;
 
-        public AuthController(IAuthRepository repository, IConfiguration configuration)
+        public AuthController(IAuthRepository repository, IConfiguration configuration, IMapper mapper)
         {
             _repository = repository;
             _configuration = configuration;
+            _mapper = mapper;
         }
 
         [HttpPost("register")]
@@ -79,7 +82,13 @@ namespace DatingSite.API.Controllers
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-            return Ok(new { token = tokenHandler.WriteToken(token) });
+            var user = _mapper.Map<UserForListDTO>(userFromRepo);
+
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token),
+                user
+            });
         }
     }
 }
