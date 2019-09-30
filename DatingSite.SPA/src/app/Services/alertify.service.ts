@@ -23,4 +23,12 @@ constructor() { }
   message(message: string) {
     alertify.message(message);
   }
+
+  confirm(message: string, okCallBack: () => any) {
+    alertify.confirm(message, (e) => {
+      if (e) {
+        okCallBack();
+      } else {}
+    });
+  }
 }
