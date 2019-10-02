@@ -30,6 +30,7 @@ import { PreventUnsavedChanges } from './guards/prevent-unsaved-changes.guard';
 import { PhotosComponent } from './photos/photos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -68,7 +69,8 @@ export function tokenGetter() {
       FileUploadModule,
       ReactiveFormsModule,
       BsDatepickerModule.forRoot(),
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      PaginationModule.forRoot()
    ],
    providers: [
       AuthService,
