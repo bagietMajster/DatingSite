@@ -40,14 +40,13 @@ namespace DatingSite.API.Controllers
                 return BadRequest("This username is taken");
             }
 
-            var userToCreate = new UserModel
-            {
-                UserName = userFroRegisterDTO.Username
-            };
+            var userToCreate = _mapper.Map<UserModel>(userFroRegisterDTO);
 
             var createdUser = await _repository.Register(userToCreate, userFroRegisterDTO.Password);
 
-            return StatusCode(201);
+            var userToReturn = _mapper.Map<UserForDetailedDTO>(createdUser);
+
+            return CreatedAtRoute("GetUser", new { controller = "Users", Id = createdUser.Id }, userToReturn);
         }
 
         [HttpPost("login")]
