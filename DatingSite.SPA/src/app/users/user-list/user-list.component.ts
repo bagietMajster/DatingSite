@@ -27,13 +27,11 @@ export class UserListComponent implements OnInit {
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadUsers();
-    console.log(this.pagination.currentPage);
   }
   loadUsers() {
     this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage)
     .subscribe((res: PaginationResult<UserModel[]>) => {
       this.users = res.result;
-      this.pagination = res.pagination;
     }, error => {
       this.alertify.error(error);
     });
