@@ -53,5 +53,7 @@ namespace DatingSite.API.Models
 
         // photos
         public ICollection<PhotoModel> Photos { get; set; }
+        public ICollection<LikesModel> UserLikes { get; set; }
+        public ICollection<LikesModel> UserIsLiked { get; set; }
     }
 }

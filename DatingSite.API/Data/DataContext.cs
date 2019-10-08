@@ -17,5 +17,23 @@ namespace DatingSite.API.Data
         public DbSet<ValueModel> Values { get; set; }
         public DbSet<UserModel> Users { get; set; }
         public DbSet<PhotoModel> Photos { get; set; }
+        public DbSet<LikesModel> Likes { get; set; }
+        
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<LikesModel>().HasKey(k => new { k.UserLikesId, k.UserIsLikedId });
+
+            builder.Entity<LikesModel>()
+                   .HasOne(u => u.UserIsLiked)
+                   .WithMany(u => u.UserLikes)
+                   .HasForeignKey(u => u.UserIsLikedId)
+                   .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<LikesModel>()
+                   .HasOne(u => u.UserLikes)
+                   .WithMany(u => u.UserIsLiked)
+                   .HasForeignKey(u => u.UserLikesId)
+                   .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

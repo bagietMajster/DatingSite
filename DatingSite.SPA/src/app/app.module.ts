@@ -18,7 +18,7 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { AuthGuard } from './guards/auth.guard';
 import { FileUploadModule } from 'ng2-file-upload';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap/';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, ButtonsModule } from 'ngx-bootstrap/';
 import { ErrorInterceptorProvider } from './Services/error.Interceptor';
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
@@ -70,7 +70,8 @@ export function tokenGetter() {
       ReactiveFormsModule,
       BsDatepickerModule.forRoot(),
       BrowserAnimationsModule,
-      PaginationModule.forRoot()
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot()
    ],
    providers: [
       AuthService,

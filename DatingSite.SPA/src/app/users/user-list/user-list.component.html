@@ -15,7 +15,7 @@
     <div class="col-lg-11 col-md-8 col-sm-6">
 
       <div class="text-center mt-3">
-        <h2>Dates chosen for you - {{pagination.totalItems}}</h2>
+        <h2>Dates chosen special for you - :)</h2>
       </div>
   
         <form class="form-inline" #form="ngForm" (ngSubmit)="loadUsers()" novalidate>
@@ -59,13 +59,24 @@
           <app-user-card [user]="user"></app-user-card>
         </div>
       </div>
-      <pagination [boundaryLinks]="true" 
+      <div class="row">
+        <pagination [boundaryLinks]="true" 
                   [totalItems]="pagination.totalItems"
                   [itemsPerPage]="pagination.itemsPerPage"
                   [(ngModel)]="pagination.currentPage"
                   (pageChanged)="pageChanged($event)"
                   previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
       </pagination>
+      <div class="col">
+        <div class="btn-group float-right">
+          <button btnRadio="lastActive" [(ngModel)]="userParams.orderBy" (click)="loadUsers()"
+                  type="button" name="orderBy" class="btn btn-primary">Last active</button>
+
+          <button btnRadio="created" [(ngModel)]="userParams.orderBy" (click)="loadUsers()"
+                  type="button" name="orderBy" class="btn btn-primary">New members</button>
+        </div>
+      </div>
+      
     </div>
   </div>
 </div>

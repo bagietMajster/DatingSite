@@ -43,6 +43,7 @@ export class UserListComponent implements OnInit {
     this.userParams.zodiacSign = 'All';
     this.userParams.minAge = 18;
     this.userParams.maxAge = 100;
+    this.userParams.orderBy = 'lastActive';
   }
 
   resetFilters() {
@@ -50,6 +51,7 @@ export class UserListComponent implements OnInit {
     this.userParams.zodiacSign = 'All';
     this.userParams.minAge = 18;
     this.userParams.maxAge = 100;
+    this.userParams.orderBy = 'lastActive';
     this.loadUsers();
   }
 
