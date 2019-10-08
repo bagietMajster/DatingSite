@@ -17,6 +17,11 @@ namespace DatingSite.API.Data
             _context = context;
         }
 
+        public async Task<LikesModel> GetLike(int userId, int recipientId)
+        {
+            return await _context.Likes.FirstOrDefaultAsync(u => u.UserLikesId == userId && u.UserIsLikedId == recipientId);
+        }
+
         public async Task<PhotoModel> GetMainPhotoForUser(int userId)
         {
             return await _context.Photos.Where(u => u.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);

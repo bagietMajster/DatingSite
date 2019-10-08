@@ -23,5 +23,7 @@ namespace DatingSite.API.Helpers
         public int MaxAge { get; set; } = 100;
         public string ZodiacSign { get; set; } = "All";
         public string OrderBy { get; set; }
+        public bool UserLikes { get; set; } = false;
+        public bool UserIsLiked { get; set; } = false;
     }
 }

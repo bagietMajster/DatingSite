@@ -2,6 +2,7 @@
 using DatingSite.API.Data;
 using DatingSite.API.Dtos;
 using DatingSite.API.Helpers;
+using DatingSite.API.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -76,6 +77,40 @@ namespace DatingSite.API.Controllers
                 return NoContent();
             }
             throw new Exception($"Update (id:{id}) failed. Database error!");
+        }
+
+        [HttpPost("{id}/like/{recipentId}")]
+        public async Task<IActionResult> LikeUser(int id, int recipentId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            {
+                return Unauthorized();
+            }
+
+            var like = await _userRepository.GetLike(id, recipentId);
+
+            if (await _userRepository.GetUser(recipentId) == null)
+            {
+                return NotFound();
+            }
+
+            if (like != null)
+            {
+                return BadRequest("Alredy liked!");
+            }
+
+            like = new LikesModel
+            {
+                UserLikesId = id,
+                UserIsLikedId = recipentId,
+            };
+            _userRepository.Add<LikesModel>(like);
+
+            if (await _userRepository.SaveAll())
+            {
+                return Ok();
+            }
+            return BadRequest("Cannot likes user :(");
         }
     }
 }
