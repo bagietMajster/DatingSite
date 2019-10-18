@@ -99,5 +99,20 @@ namespace DatingSite.API.Data
 
             return await PagedList<UserModel>.CreateListAsync(users, userParams.PageNumber, userParams.PageSize);
         }
+
+        public async Task<MessagesModel> GetMessage(int id)
+        {
+            return await _context.Messages.FirstOrDefaultAsync(m => m.Id == id);
+        }
+
+        public Task<PagedList<MessagesModel>> GetMessagesForUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<MessagesModel>> GetMessageThread(int userId, int recipientId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

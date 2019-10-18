@@ -35,6 +35,7 @@ namespace DatingSite.API.Helpers
             CreateMap<PhotoModel, PhotoForReturnDto>();
             CreateMap<PhotoForCreationDTO, PhotoModel>();
             CreateMap<UserForRegisterDTO, UserModel>();
+            CreateMap<MessageForCreationDto, MessagesModel>().ReverseMap();
         }
     }
 }
