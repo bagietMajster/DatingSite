@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\bagietMajster\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bagietMajster\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\bagietMajster\source\repos\DatingSite\DatingSite.API" t="IncludeRecursive">
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="AuthController.cs" t="Include" />
+        <e p="PhotosController.cs" t="Include" />
+        <e p="UsersController.cs" t="Include" />
+        <e p="ValuesController.cs" t="Include" />
+      </e>
+      <e p="Data" t="Include">
+        <e p="AuthRepository.cs" t="Include" />
+        <e p="DataContext.cs" t="Include" />
+        <e p="GenericRepository.cs" t="Include" />
+        <e p="IAuthRepository.cs" t="Include" />
+        <e p="IGenericRepository.cs" t="Include" />
+        <e p="IUserRepository.cs" t="Include" />
+        <e p="Seed.cs" t="Include" />
+        <e p="UserRepository.cs" t="Include" />
+        <e p="UserSeedData.json" t="Include" />
+      </e>
+      <e p="DatingSite.API.csproj" t="IncludeRecursive" />
+      <e p="DatingSite.db" t="Include" />
+      <e p="Dtos" t="Include">
+        <e p="PhotoForCreationDTO.cs" t="Include" />
+        <e p="PhotoForReturnDto.cs" t="Include" />
+        <e p="PhotosForDetailedDTO.cs" t="Include" />
+        <e p="UserForDetailedDTO.cs" t="Include" />
+        <e p="UserForListDTO.cs" t="Include" />
+        <e p="UserForLoginDTO.cs" t="Include" />
+        <e p="UserForRegisterDTO.cs" t="Include" />
+        <e p="UserForUpdateDTO.cs" t="Include" />
+      </e>
+      <e p="Helpers" t="Include">
+        <e p="AutoMapperProfiles.cs" t="Include" />
+        <e p="CloudinarySettings.cs" t="Include" />
+        <e p="Extensions.cs" t="Include" />
+        <e p="LogUserActivity.cs" t="Include" />
+        <e p="PagedList.cs" t="Include" />
+        <e p="PaginationHeader.cs" t="Include" />
+        <e p="UserParams.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20190920121440_InitialDB.cs" t="Include" />
+        <e p="20190920121440_InitialDB.Designer.cs" t="Include" />
+        <e p="20190921130549_AddedUser.cs" t="Include" />
+        <e p="20190921130549_AddedUser.Designer.cs" t="Include" />
+        <e p="20190924182122_extUser.cs" t="Include" />
+        <e p="20190924182122_extUser.Designer.cs" t="Include" />
+        <e p="20190925111239_addedpublicid.cs" t="Include" />
+        <e p="20190925111239_addedpublicid.Designer.cs" t="Include" />
+        <e p="20191008185230_AddedLikeEntity.cs" t="Include" />
+        <e p="20191008185230_AddedLikeEntity.Designer.cs" t="Include" />
+        <e p="DataContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="LikesModel.cs" t="Include" />
+        <e p="PhotoModel.cs" t="Include" />
+        <e p="UserModel.cs" t="Include" />
+        <e p="ValueModel.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.2" t="Include">
+            <e p="DatingSite.API.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+    </e>
+  </component>
+</project>

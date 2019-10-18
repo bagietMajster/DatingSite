@@ -21,7 +21,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers(page?, itemsPerPage?, userParams?): Observable<PaginationResult<UserModel[]>> {
+  getUsers(page?, itemsPerPage?, userParams?, likesParam?): Observable<PaginationResult<UserModel[]>> {
     const paginationResult: PaginationResult<UserModel[]> = new PaginationResult<UserModel[]>();
     let params = new HttpParams();
 
@@ -35,6 +35,14 @@ export class UserService {
       params = params.append('gender', userParams.gender);
       params = params.append('zodiacSign', userParams.zodiacSign);
       params = params.append('orderBy', userParams.orderBy);
+    }
+
+    if (likesParam === 'UserLikes') {
+      params = params.append('UserLikes', 'true');
+    }
+
+    if (likesParam === 'UserIsLiked') {
+      params = params.append('UserIsLiked', 'true');
     }
 
     return this.http.get<UserModel[]>(this.baseUrl + 'users', { observe: 'response', params})
@@ -65,5 +73,9 @@ export class UserService {
 
   deletePhoto(userId: number, id: number) {
     return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
+  }
+
+  sendLike(id: number, recipientId: number) {
+    return this.http.post(this.baseUrl + 'users/' + id + '/like/' + recipientId, {});
   }
 }

@@ -31,6 +31,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { LikesResolver } from './resolvers/likes.resolver';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -82,7 +83,8 @@ export function tokenGetter() {
       UserDetailResolver,
       UserListResolver,
       UserEditResolver,
-      PreventUnsavedChanges
+      PreventUnsavedChanges,
+      LikesResolver
    ],
    bootstrap: [
       AppComponent
